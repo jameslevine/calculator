@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="./assets/calculatoricon.jpg" />
+    <link rel="apple-touch-icon" href="./assets/calculatoricon.jpg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./assets/calculatoricon.jpg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/calculatoricon.jpg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="./assets/calculatoricon.jpg"
+    />
+    <link rel="apple-touch-startup-image" href="launch.png" />
+    <!-- iPhone 8, 7, 6s, 6 (750px x 1334px) -->
+    <link
+      rel="apple-touch-startup-image"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+      href="./assets/calculatorsplashscreeniphone7.jpg"
+    />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="JS Calculator" />
     <title>title</title>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Orbitron');
+      @import url("https://fonts.googleapis.com/css?family=Orbitron");
 
-    body {
-      background-image: url("https://picsum.photos/1500");
-    }
+      body {
+        background-image: url("./assets/mathsbackground.jpg");
+      }
 
       .grid-container {
         display: grid;
@@ -36,7 +66,7 @@
         background: grey;
         left: 35%;
         border: 1px solid black;
-        box-shadow: 5px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 5px 10px rgba(0, 0, 0, 0.6);
         padding: 70px 20px 0px 20px;
         border-radius: 3px;
         top: 30%;
@@ -56,24 +86,26 @@
         text-align: right;
       }
 
-    #screen {
-      position: absolute;
-      bottom: 0px;
-      visibility: hidden;
-    }
+      #screen {
+        position: absolute;
+        bottom: 0px;
+        visibility: hidden;
+      }
 
-    footer {
-      position: absolute;
-      right: 0px;
-      bottom: 0px;
-      color: white;
-    }
+      footer {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        color: white;
+      }
     </style>
   </head>
   <body onkeydown="keypress(event)">
-      <input id="visual" type="text" value="" readonly>
+    <input id="visual" type="text" value="" readonly />
     <div class="grid-container">
-      <button id="ac" type="button" name="button" onclick="reloadPage()">AC</button>
+      <button id="ac" type="button" name="button" onclick="reloadPage()">
+        AC
+      </button>
       <button id="clear" type="button" name="button">C</button>
       <button id="square" type="button" name="button">X<sup>2</sup></button>
       <button id="power" type="button" name="button">^</button>
@@ -98,36 +130,45 @@
       <button id="percent" type="button" name="button">%</button>
       <button id="squareRoot" type="button" name="button"><sup>2</sup>√</button>
     </div>
-    <input id="screen" type="text" value="" readonly>
+    <input id="screen" type="text" value="" readonly />
     <footer>Made by James Levine 2019</footer>
+    <script type="text/javascript">
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js").then(reg => {
+            console.log("Service worker registered.", reg);
+          });
+        });
+      }
+    </script>
   </body>
   <script type="text/javascript">
-    var one = document.getElementById('one').innerHTML;
-    var two = document.getElementById('two').innerHTML;
-    var three = document.getElementById('three').innerHTML;
-    var four = document.getElementById('four').innerHTML;
-    var five = document.getElementById('five').innerHTML;
-    var six = document.getElementById('six').innerHTML;
-    var seven = document.getElementById('seven').innerHTML;
-    var eight = document.getElementById('eight').innerHTML;
-    var nine = document.getElementById('nine').innerHTML;
-    var zero = document.getElementById('zero').innerHTML;
-    var ac = document.getElementById('ac').innerHTML;
-    var clear = document.getElementById('clear').innerHTML;
-    var root = document.getElementById('square').innerHTML;
-    var power = document.getElementById('power').innerHTML;
-    var plus = document.getElementById('plus').innerHTML;
-    var minus = document.getElementById('minus').innerHTML;
-    var times = document.getElementById('times').innerHTML;
-    var stop = document.getElementById('stop').innerHTML;
-    var equals = document.getElementById('equals').innerHTML;
-    var divide = document.getElementById('divide').innerHTML;
-    var memoryMinus = document.getElementById('memoryMinus').innerHTML;
-    var memoryPlus = document.getElementById('memoryPlus').innerHTML;
-    var squareRoot = document.getElementById('squareRoot').innerHTML;
-    var percent = document.getElementById('percent').innerHTML;
-    var screen = document.getElementById('screen').value;
-    var visual = document.getElementById('visual').value;
+    var one = document.getElementById("one").innerHTML;
+    var two = document.getElementById("two").innerHTML;
+    var three = document.getElementById("three").innerHTML;
+    var four = document.getElementById("four").innerHTML;
+    var five = document.getElementById("five").innerHTML;
+    var six = document.getElementById("six").innerHTML;
+    var seven = document.getElementById("seven").innerHTML;
+    var eight = document.getElementById("eight").innerHTML;
+    var nine = document.getElementById("nine").innerHTML;
+    var zero = document.getElementById("zero").innerHTML;
+    var ac = document.getElementById("ac").innerHTML;
+    var clear = document.getElementById("clear").innerHTML;
+    var root = document.getElementById("square").innerHTML;
+    var power = document.getElementById("power").innerHTML;
+    var plus = document.getElementById("plus").innerHTML;
+    var minus = document.getElementById("minus").innerHTML;
+    var times = document.getElementById("times").innerHTML;
+    var stop = document.getElementById("stop").innerHTML;
+    var equals = document.getElementById("equals").innerHTML;
+    var divide = document.getElementById("divide").innerHTML;
+    var memoryMinus = document.getElementById("memoryMinus").innerHTML;
+    var memoryPlus = document.getElementById("memoryPlus").innerHTML;
+    var squareRoot = document.getElementById("squareRoot").innerHTML;
+    var percent = document.getElementById("percent").innerHTML;
+    var screen = document.getElementById("screen").value;
+    var visual = document.getElementById("visual").value;
     var screenArr = [];
     var screenVisual = [];
     var memory = [];
@@ -155,290 +196,297 @@
     document.getElementById("stop").addEventListener("click", stopFunction);
     document.getElementById("equals").addEventListener("click", equalsFunction);
     document.getElementById("divide").addEventListener("click", divideFunction);
-    document.getElementById("memoryMinus").addEventListener("click", memoryMinusFunction);
-    document.getElementById("memoryPlus").addEventListener("click", memoryPlusFunction);
-    document.getElementById("squareRoot").addEventListener("click", squareRootFunction);
-    document.getElementById("percent").addEventListener("click", percentFunction);
+    document
+      .getElementById("memoryMinus")
+      .addEventListener("click", memoryMinusFunction);
+    document
+      .getElementById("memoryPlus")
+      .addEventListener("click", memoryPlusFunction);
+    document
+      .getElementById("squareRoot")
+      .addEventListener("click", squareRootFunction);
+    document
+      .getElementById("percent")
+      .addEventListener("click", percentFunction);
 
     function keypress(event) {
       var x = event.keyCode;
       if (x == 49) {
-    console.log("You pressed the 1 key!");
-    oneFunction();
-  } else if (x == 50) {
-    console.log("You pressed the 2 key!");
-    twoFunction();
-  } else if (x == 51) {
-    console.log("You pressed the 3 key!");
-    threeFunction();
-  } else if (x == 52) {
-    console.log("You pressed the 4 key!");
-    fourFunction();
-  } else if (x == 53) {
-    console.log("You pressed the 5 key!");
-    fiveFunction();
-  } else if (x == 54) {
-    console.log("You pressed the 6 key!");
-    sixFunction();
-  } else if (x == 55) {
-    console.log("You pressed the 7 key!");
-    sevenFunction();
-  } else if (x == 56) {
-    console.log("You pressed the 8 key!");
-    eightFunction();
-  } else if (x == 57) {
-    console.log("You pressed the 9 key!");
-    nineFunction();
-  } else if (x == 48) {
-    console.log("You pressed the 0 key!");
-    zeroFunction();
-  } else if (x == 190) {
-    console.log("You pressed the decimal point key!");
-    stopFunction();
-  }
-  };
+        console.log("You pressed the 1 key!");
+        oneFunction();
+      } else if (x == 50) {
+        console.log("You pressed the 2 key!");
+        twoFunction();
+      } else if (x == 51) {
+        console.log("You pressed the 3 key!");
+        threeFunction();
+      } else if (x == 52) {
+        console.log("You pressed the 4 key!");
+        fourFunction();
+      } else if (x == 53) {
+        console.log("You pressed the 5 key!");
+        fiveFunction();
+      } else if (x == 54) {
+        console.log("You pressed the 6 key!");
+        sixFunction();
+      } else if (x == 55) {
+        console.log("You pressed the 7 key!");
+        sevenFunction();
+      } else if (x == 56) {
+        console.log("You pressed the 8 key!");
+        eightFunction();
+      } else if (x == 57) {
+        console.log("You pressed the 9 key!");
+        nineFunction();
+      } else if (x == 48) {
+        console.log("You pressed the 0 key!");
+        zeroFunction();
+      } else if (x == 190) {
+        console.log("You pressed the decimal point key!");
+        stopFunction();
+      }
+    }
 
-function oneFunction() {
-  screenArr.push("1");
-  screenVisual.push("1");
-  let joinedArr = screenArr.join("");
-  let visualArr = screenVisual.join("");
-  document.getElementById('screen').value = joinedArr;
-  document.getElementById('visual').value = visualArr;
-};
+    function oneFunction() {
+      screenArr.push("1");
+      screenVisual.push("1");
+      let joinedArr = screenArr.join("");
+      let visualArr = screenVisual.join("");
+      document.getElementById("screen").value = joinedArr;
+      document.getElementById("visual").value = visualArr;
+    }
 
-function twoFunction() {
-  screenArr.push("2")
-  let joinedArr = screenArr.join("");
-  document.getElementById('screen').value = joinedArr;
-  screenVisual.push("2");
-  let visualArr = screenVisual.join("");
-  document.getElementById('visual').value = visualArr;
-};
+    function twoFunction() {
+      screenArr.push("2");
+      let joinedArr = screenArr.join("");
+      document.getElementById("screen").value = joinedArr;
+      screenVisual.push("2");
+      let visualArr = screenVisual.join("");
+      document.getElementById("visual").value = visualArr;
+    }
 
-function threeFunction() {
-  screenArr.push("3")
-  let joinedArr = screenArr.join("");
-  document.getElementById('screen').value = joinedArr;
-  screenVisual.push("3");
-  let visualArr = screenVisual.join("");
-  document.getElementById('visual').value = visualArr;
-};
+    function threeFunction() {
+      screenArr.push("3");
+      let joinedArr = screenArr.join("");
+      document.getElementById("screen").value = joinedArr;
+      screenVisual.push("3");
+      let visualArr = screenVisual.join("");
+      document.getElementById("visual").value = visualArr;
+    }
 
-function fourFunction() {
-  screenArr.push("4")
-  let joinedArr = screenArr.join("");
-  document.getElementById('screen').value = joinedArr;
-  screenVisual.push("4");
-  let visualArr = screenVisual.join("");
-  document.getElementById('visual').value = visualArr;
-};
+    function fourFunction() {
+      screenArr.push("4");
+      let joinedArr = screenArr.join("");
+      document.getElementById("screen").value = joinedArr;
+      screenVisual.push("4");
+      let visualArr = screenVisual.join("");
+      document.getElementById("visual").value = visualArr;
+    }
 
-function fiveFunction() {
-  screenArr.push("5")
-  let joinedArr = screenArr.join("");
-  document.getElementById('screen').value = joinedArr;
-  screenVisual.push("5");
-  let visualArr = screenVisual.join("");
-  document.getElementById('visual').value = visualArr;
-};
+    function fiveFunction() {
+      screenArr.push("5");
+      let joinedArr = screenArr.join("");
+      document.getElementById("screen").value = joinedArr;
+      screenVisual.push("5");
+      let visualArr = screenVisual.join("");
+      document.getElementById("visual").value = visualArr;
+    }
 
-function sixFunction() {
-  screenArr.push("6")
-  let joinedArr = screenArr.join("");
-  document.getElementById('screen').value = joinedArr;
-  screenVisual.push("6");
-  let visualArr = screenVisual.join("");
-  document.getElementById('visual').value = visualArr;
-};
+    function sixFunction() {
+      screenArr.push("6");
+      let joinedArr = screenArr.join("");
+      document.getElementById("screen").value = joinedArr;
+      screenVisual.push("6");
+      let visualArr = screenVisual.join("");
+      document.getElementById("visual").value = visualArr;
+    }
 
-function sevenFunction() {
-  screenArr.push("7")
-  let joinedArr = screenArr.join("");
-  document.getElementById('screen').value = joinedArr;
-  screenVisual.push("7");
-  let visualArr = screenVisual.join("");
-  document.getElementById('visual').value = visualArr;
-};
+    function sevenFunction() {
+      screenArr.push("7");
+      let joinedArr = screenArr.join("");
+      document.getElementById("screen").value = joinedArr;
+      screenVisual.push("7");
+      let visualArr = screenVisual.join("");
+      document.getElementById("visual").value = visualArr;
+    }
 
-function eightFunction() {
-  screenArr.push("8")
-  let joinedArr = screenArr.join("");
-  document.getElementById('screen').value = joinedArr;
-  screenVisual.push("8");
-  let visualArr = screenVisual.join("");
-  document.getElementById('visual').value = visualArr;
-};
+    function eightFunction() {
+      screenArr.push("8");
+      let joinedArr = screenArr.join("");
+      document.getElementById("screen").value = joinedArr;
+      screenVisual.push("8");
+      let visualArr = screenVisual.join("");
+      document.getElementById("visual").value = visualArr;
+    }
 
-function nineFunction() {
-  screenArr.push("9")
-  let joinedArr = screenArr.join("");
-  document.getElementById('screen').value = joinedArr;
-  screenVisual.push("9");
-  let visualArr = screenVisual.join("");
-  document.getElementById('visual').value = visualArr;
-};
+    function nineFunction() {
+      screenArr.push("9");
+      let joinedArr = screenArr.join("");
+      document.getElementById("screen").value = joinedArr;
+      screenVisual.push("9");
+      let visualArr = screenVisual.join("");
+      document.getElementById("visual").value = visualArr;
+    }
 
-//AC Button Function - reloads page
-function reloadPage() {
-location.reload();
-};
+    //AC Button Function - reloads page
+    function reloadPage() {
+      location.reload();
+    }
 
-//Function which clears calculator screen
-function clearFunction() {
-  document.getElementById('screen').value = "";
-  document.getElementById('visual').value = "";
-  joinedArr = [];
-  screenArr = [];
-  screenVisual = [];
-  console.log(joinedArr);
-  console.log(screenArr);
-};
+    //Function which clears calculator screen
+    function clearFunction() {
+      document.getElementById("screen").value = "";
+      document.getElementById("visual").value = "";
+      joinedArr = [];
+      screenArr = [];
+      screenVisual = [];
+      console.log(joinedArr);
+      console.log(screenArr);
+    }
 
-function zeroFunction() {
-  if (document.getElementById('screen').value.length >= 0) {
-    screenArr.push("0");
-    let joinedArr = screenArr.join("");
-    document.getElementById('screen').value = joinedArr;
-    screenVisual.push("0");
-    let visualArr = screenVisual.join("");
-    document.getElementById('visual').value = visualArr;
-  }
-};
+    function zeroFunction() {
+      if (document.getElementById("screen").value.length >= 0) {
+        screenArr.push("0");
+        let joinedArr = screenArr.join("");
+        document.getElementById("screen").value = joinedArr;
+        screenVisual.push("0");
+        let visualArr = screenVisual.join("");
+        document.getElementById("visual").value = visualArr;
+      }
+    }
 
-function plusFunction() {
-  let joinedArr = screenArr.join("");
-  screenArr.push("+");
-  console.log(screenArr)
-  console.log(joinedArr)
-  document.getElementById('screen').value = "";
-  document.getElementById('visual').value = "";
-  screenVisual = [];
-}
+    function plusFunction() {
+      let joinedArr = screenArr.join("");
+      screenArr.push("+");
+      console.log(screenArr);
+      console.log(joinedArr);
+      document.getElementById("screen").value = "";
+      document.getElementById("visual").value = "";
+      screenVisual = [];
+    }
 
-function minusFunction() {
-  let joinedArr = screenArr.join("");
-  screenArr.push("-");
-  console.log(screenArr)
-  console.log(joinedArr)
-  document.getElementById('screen').value = "";
-  document.getElementById('visual').value = "";
-  screenVisual = [];
-}
+    function minusFunction() {
+      let joinedArr = screenArr.join("");
+      screenArr.push("-");
+      console.log(screenArr);
+      console.log(joinedArr);
+      document.getElementById("screen").value = "";
+      document.getElementById("visual").value = "";
+      screenVisual = [];
+    }
 
-function timesFunction() {
-  let joinedArr = screenArr.join("");
-  screenArr.push("*");
-  console.log(screenArr)
-  console.log(joinedArr)
-  document.getElementById('screen').value = "";
-  document.getElementById('visual').value = "";
-  screenVisual = [];
-}
+    function timesFunction() {
+      let joinedArr = screenArr.join("");
+      screenArr.push("*");
+      console.log(screenArr);
+      console.log(joinedArr);
+      document.getElementById("screen").value = "";
+      document.getElementById("visual").value = "";
+      screenVisual = [];
+    }
 
-function divideFunction() {
-  let joinedArr = screenArr.join("");
-  screenArr.push("/");
-  console.log(screenArr)
-  console.log(joinedArr)
-  document.getElementById('screen').value = "";
-  document.getElementById('visual').value = "";
-  screenVisual = [];
-}
+    function divideFunction() {
+      let joinedArr = screenArr.join("");
+      screenArr.push("/");
+      console.log(screenArr);
+      console.log(joinedArr);
+      document.getElementById("screen").value = "";
+      document.getElementById("visual").value = "";
+      screenVisual = [];
+    }
 
-function memoryMinusFunction() {
-  let joinedArr = screenArr.join("");
-  memory.push("(");
-  memory.push(joinedArr);
-  memory.push(")");
-  let memoryJoined = memory.join("");
-  console.log(memory);
-  console.log(memoryJoined);
-  console.log(joinedArr);
-  document.getElementById('screen').value = "";
-  document.getElementById('visual').value = "";
-  joinedArr = [];
-  screenArr = [];
-  screenVisual = [];
-}
+    function memoryMinusFunction() {
+      let joinedArr = screenArr.join("");
+      memory.push("(");
+      memory.push(joinedArr);
+      memory.push(")");
+      let memoryJoined = memory.join("");
+      console.log(memory);
+      console.log(memoryJoined);
+      console.log(joinedArr);
+      document.getElementById("screen").value = "";
+      document.getElementById("visual").value = "";
+      joinedArr = [];
+      screenArr = [];
+      screenVisual = [];
+    }
 
-function memoryPlusFunction() {
-  //let joinedArr = screenArr.join("");
-  let memoryJoined = memory.join("");
-  let memoryCalc = eval(memoryJoined);
-  console.log(eval(memoryJoined));
-  console.log(memoryCalc);
-  document.getElementById('screen').value = memoryCalc;
-  document.getElementById('visual').value = memoryCalc;
-  screenArr.push(memoryCalc);
-  screenVisual.push(memoryCalc);
-  console.log(screenArr);
-  console.log(screenVisual);
-}
+    function memoryPlusFunction() {
+      //let joinedArr = screenArr.join("");
+      let memoryJoined = memory.join("");
+      let memoryCalc = eval(memoryJoined);
+      console.log(eval(memoryJoined));
+      console.log(memoryCalc);
+      document.getElementById("screen").value = memoryCalc;
+      document.getElementById("visual").value = memoryCalc;
+      screenArr.push(memoryCalc);
+      screenVisual.push(memoryCalc);
+      console.log(screenArr);
+      console.log(screenVisual);
+    }
 
-function squareRootFunction() {
-  let joinedArr = screenArr.join("");
-  screenArr.unshift("Math.sqrt(");
-  screenArr.push(")");
-  console.log(screenArr)
-  console.log(joinedArr)
-  document.getElementById('screen').value = "";
-  document.getElementById('visual').value = "";
-  screenVisual = [];
-  equalsFunction();
-}
+    function squareRootFunction() {
+      let joinedArr = screenArr.join("");
+      screenArr.unshift("Math.sqrt(");
+      screenArr.push(")");
+      console.log(screenArr);
+      console.log(joinedArr);
+      document.getElementById("screen").value = "";
+      document.getElementById("visual").value = "";
+      screenVisual = [];
+      equalsFunction();
+    }
 
-function powerFunction() {
-  let joinedArr = screenArr.join("");
-  screenArr.push("**");
-  console.log(screenArr)
-  console.log(joinedArr)
-  document.getElementById('screen').value = "";
-  document.getElementById('visual').value = "";
-  screenVisual = [];
-}
+    function powerFunction() {
+      let joinedArr = screenArr.join("");
+      screenArr.push("**");
+      console.log(screenArr);
+      console.log(joinedArr);
+      document.getElementById("screen").value = "";
+      document.getElementById("visual").value = "";
+      screenVisual = [];
+    }
 
-function squareFunction() {
-  let joinedArr = screenArr.join("");
-  screenArr.push("**2");
-  console.log(screenArr)
-  console.log(joinedArr)
-  document.getElementById('screen').value = "";
-  document.getElementById('visual').value = "";
-  screenVisual = [];
-  equalsFunction();
-}
+    function squareFunction() {
+      let joinedArr = screenArr.join("");
+      screenArr.push("**2");
+      console.log(screenArr);
+      console.log(joinedArr);
+      document.getElementById("screen").value = "";
+      document.getElementById("visual").value = "";
+      screenVisual = [];
+      equalsFunction();
+    }
 
-function percentFunction() {
-  let joinedArr = screenArr.join("");
-  screenArr.unshift("(");
-  screenArr.push(")/100");
-  console.log(screenArr)
-  console.log(joinedArr)
-  document.getElementById('screen').value = "";
-  document.getElementById('visual').value = "";
-  screenVisual = [];
-  equalsFunction();
-}
+    function percentFunction() {
+      let joinedArr = screenArr.join("");
+      screenArr.unshift("(");
+      screenArr.push(")/100");
+      console.log(screenArr);
+      console.log(joinedArr);
+      document.getElementById("screen").value = "";
+      document.getElementById("visual").value = "";
+      screenVisual = [];
+      equalsFunction();
+    }
 
-function stopFunction() {
-  screenArr.push(".")
-  let joinedArr = screenArr.join("");
-  document.getElementById('screen').value = joinedArr;
-  screenVisual.push(".");
-  let visualArr = screenVisual.join("");
-  document.getElementById('visual').value = visualArr;
-};
+    function stopFunction() {
+      screenArr.push(".");
+      let joinedArr = screenArr.join("");
+      document.getElementById("screen").value = joinedArr;
+      screenVisual.push(".");
+      let visualArr = screenVisual.join("");
+      document.getElementById("visual").value = visualArr;
+    }
 
-function equalsFunction() {
-  let joinedArr = screenArr.join("");
-  let equalsCalc = eval(joinedArr);
-  console.log(screenArr)
-  console.log(joinedArr)
-  document.getElementById('screen').value = equalsCalc;
-  document.getElementById('visual').value = equalsCalc;
-  console.log(eval(joinedArr));
-}
-
+    function equalsFunction() {
+      let joinedArr = screenArr.join("");
+      let equalsCalc = eval(joinedArr);
+      console.log(screenArr);
+      console.log(joinedArr);
+      document.getElementById("screen").value = equalsCalc;
+      document.getElementById("visual").value = equalsCalc;
+      console.log(eval(joinedArr));
+    }
   </script>
 </html>
