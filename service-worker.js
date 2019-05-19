@@ -1,4 +1,4 @@
-const FILES_TO_CACHE = ["/index.html", "/main.css"];
+const FILES_TO_CACHE = ["./index.html", "./main.css"];
 
 // CODELAB: Precache static resources here.
 evt.waitUntil(
